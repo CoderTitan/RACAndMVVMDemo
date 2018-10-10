@@ -31,8 +31,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejv-bp-rm9">
-                        <rect key="frame" x="175" y="120.5" width="27" height="22"/>
-                        <state key="normal" title="0" image="studentNum"/>
+                        <rect key="frame" x="175" y="108.5" width="30" height="34"/>
+                        <state key="normal" title="0"/>
                     </button>
                 </subviews>
                 <constraints>
@@ -55,7 +55,4 @@
             <point key="canvasLocation" x="55.200000000000003" y="19.340329835082461"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="studentNum" width="16" height="16"/>
-    </resources>
 </document>

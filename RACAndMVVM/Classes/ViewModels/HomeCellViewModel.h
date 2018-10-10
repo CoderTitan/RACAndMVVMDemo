@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "TKViewModelProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeCellViewModel : NSObject
+// 处理Cell的显示和业务逻辑处理
+@class HomeModel;
+@interface HomeCellViewModel : NSObject <TKViewModelProtocol>
+
+@property (nonatomic, strong) HomeModel *model;
 
 @end
 
