@@ -1,0 +1,6 @@
+framework module Pods_RACAndMVVM {
+  umbrella header "Pods-RACAndMVVM-umbrella.h"
+
+  export *
+  module * { export * }
+}

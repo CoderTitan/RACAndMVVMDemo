@@ -1,0 +1,12 @@
+
+platform :ios, '9.0'
+
+target 'RACAndMVVM' do
+  use_frameworks!
+
+    pod 'ReactiveObjC'
+    pod 'AFNetworking'
+    pod 'MJExtension'
+    pod 'SDWebImage'
+
+end
