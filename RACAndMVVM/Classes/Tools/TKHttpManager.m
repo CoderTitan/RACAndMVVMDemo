@@ -13,24 +13,22 @@
 @implementation TKHttpManager
 
 
-
-/// 封装post请求
-+ (void)POST:(NSString *)URLString parameters:(id)parameters progress:(void (^)(NSProgress * progress))uploadProgress success:(void (^)(NSURLSessionDataTask *task , id responseObject))success failure:(void (^)(NSURLSessionDataTask *task , NSError * error))failure {
++ (void)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nonnull))success failure:(void (^)(NSURLSessionDataTask * _Nonnull, NSError * _Nonnull))failure {
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    // 自定义请求, 为JSON格式
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    // 自定义请求，为JSON格式
+    mgr.requestSerializer = [AFJSONRequestSerializer serializer];
     
     // 自定义响应
-    AFHTTPResponseSerializer *response = [AFHTTPResponseSerializer serializer];
+    AFHTTPResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializer];
     
-    response.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
     
-    manager.responseSerializer = response;
+    mgr.responseSerializer = responseSerializer;
     
-    [manager POST:URLString parameters:parameters progress:nil success:success failure:failure];
+    [mgr POST:URLString parameters:parameters progress:nil success:success failure:failure];
 }
+
 
 
 

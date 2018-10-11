@@ -31,6 +31,8 @@
     [super viewDidLoad];
     
     
+//    [self.homeVM loadData];
+    
     @weakify(self)
     [[self.homeVM.loadHomeDataCommand execute:nil] subscribeNext:^(id  _Nullable x) {
         @strongify(self)

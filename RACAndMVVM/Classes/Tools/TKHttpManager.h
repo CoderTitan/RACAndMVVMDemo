@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 封装post请求
-+ (void)POST:(NSString *)URLString parameters:(id)parameters progress:(void (^)(NSProgress * progress))uploadProgress success:(void (^)(NSURLSessionDataTask *task , id responseObject))success failure:(void (^)(NSURLSessionDataTask *task , NSError * error))failure;
++ (void)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task , id responseObject))success failure:(void (^)(NSURLSessionDataTask *task , NSError * error))failure;
 
 @end
 

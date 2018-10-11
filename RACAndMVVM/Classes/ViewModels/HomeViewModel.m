@@ -33,7 +33,7 @@
                 // 发送请求
                 @strongify(self)
                 NSDictionary *params = [TKNetworkManager paramWithHome];
-                [TKHttpManager POST:homeUrl parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+                [TKHttpManager POST:homeUrl parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
                     // 数据处理
                     NSDictionary *result = responseObject[@"result"];
                     NSDictionary *recommendsDict = result[@"recommends"];
@@ -53,7 +53,6 @@
                     // 请求成功
                     [subscriber sendNext:recommends];
                     [subscriber sendCompleted];
-                    
                 } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
                     [subscriber sendError:error];
                 }];
@@ -76,7 +75,7 @@
     HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     // 视图模型
-    HomeCellViewModel *cellVM = [[HomeCellViewModel alloc]init];
+    HomeCellViewModel *cellVM = self.CellVMArr[indexPath.row];
     
     // 绑定视图模型
     [cellVM bindViewModel:cell];
